@@ -1,0 +1,49 @@
+"//":"insert data"
+db.claim.insert({
+Claimid: 1 ,
+Insurance_id: 233,
+Claim_status: "Claimed",
+Amount_claimed: 28594
+})
+
+db.claim.insert({
+Claimid: 2 ,
+Insurance_id: 206,
+Claim_status: "Given",
+Amount_claimed: 20220
+})
+⋮
+
+"//":" List out all the policyholders that never received the bill."
+db.policyholder.find({ "Bill_id": null });
+
+"//": "Write a query to get the highest amount in the given claim using an aggregate pipeline in “claim” collection"
+db.claim.aggregate([{
+   $match:{Claim_status:"Given"}
+},{
+   $group:{
+       _id: {Claim_id:"$Claimid"},
+       Amount:{$push:"$Amount_claimed"}
+   }
+},{$sort:{Amount:-1}
+},{ $limit:1}])
+
+"//": "Write a query to find anyone who submitted more than 1 claim using a map-reduce pipeline in “claim” collection"
+db.claim.mapReduce(
+    function(){
+        emit(this.Insurance_id, 1);
+        },
+    function(key, value)
+        {return(Array.sum(value))},
+        {out:"insuranceid_counts"}
+    ).find({"value":{$gt:1}});
+
+"//": "Write a query to count the number of employee in each department using a map-reduce pipeline in “policyholder” collection"
+db.policyholder.mapReduce(
+    function(){
+        emit(this.Dept_id, 1);
+        },
+    function(key, value)
+        {return(Array.sum(value))},
+        {out:"dept_counts"}
+    ).find();
