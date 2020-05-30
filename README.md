@@ -14,5 +14,6 @@ Manage the insertion, storage and efficient retrieval of the data of the insuran
 - Managed our part of the database in the **NoSQL (MongoDB)** environment and used **MapReduce** and **aggregate** functions. 
 8. Access edour database using **R** and made analysis of the retrieved data. 
 
-## Other creator
+## Creator
+Chia-Han Chiang (https://www.linkedin.com/in/chia-han-chiang/)
 Urjasvit Sinha (https://www.linkedin.com/in/urjasvit-sinha-a34670159/)
