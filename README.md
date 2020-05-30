@@ -13,3 +13,6 @@ Manage the insertion, storage and efficient retrieval of the data of the insuran
 7. Developed various real world situations relevant to our business case and retrieved the answers to them using SQL queries.
 - Managed our part of the database in the **NoSQL (MongoDB)** environment and used **MapReduce** and **aggregate** functions. 
 8. Access edour database using **R** and made analysis of the retrieved data. 
+
+## Other creator
+Urjasvit Sinha (https://www.linkedin.com/in/urjasvit-sinha-a34670159/)
