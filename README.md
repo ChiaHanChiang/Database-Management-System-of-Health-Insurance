@@ -16,4 +16,5 @@ Manage the insertion, storage and efficient retrieval of the data of the insuran
 
 ## Creator
 Chia-Han Chiang (https://www.linkedin.com/in/chia-han-chiang/)
+
 Urjasvit Sinha (https://www.linkedin.com/in/urjasvit-sinha-a34670159/)
